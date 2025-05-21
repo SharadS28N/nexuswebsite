@@ -59,14 +59,6 @@ const teamMembers = [
     email: 'anna@nexuseventit.com',
     github: '#'
   },
-  {
-    name: 'James Wilson',
-    role: 'Technical Director',
-    image: 'https://images.pexels.com/photos/2379xxx/pexels-photo-2379xxx.jpeg',
-    linkedin: '#',
-    email: 'james@nexuseventit.com',
-    github: '#'
-  },
 ];
 
 const Team = () => {
