@@ -67,14 +67,6 @@ const teamMembers = [
     email: 'james@nexuseventit.com',
     github: '#'
   },
-  {
-    name: 'Lisa Park',
-    role: 'Creative Director',
-    image: 'https://images.pexels.com/photos/3796218/pexels-photo-3796218.jpeg',
-    linkedin: '#',
-    email: 'lisa@nexuseventit.com',
-    github: '#'
-  }
 ];
 
 const Team = () => {
