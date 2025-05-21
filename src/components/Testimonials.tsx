@@ -62,7 +62,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 right-0 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-0 w-80 h-80 bg-cyan-600/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-purple-600/5 rounded-full blur-3xl"></div>
       </div>
       
@@ -74,7 +74,7 @@ const Testimonials = () => {
       >
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Clients Say</span>
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Clients Say</span>
           </h2>
           <p className="text-slate-300 text-lg">
             Don't just take our word for it. Here's what our clients have to say about their experience working with Nexus.
@@ -136,7 +136,7 @@ const Testimonials = () => {
                   key={index}
                   onClick={() => setActiveIndex(index)}
                   className={`h-2 rounded-full transition-all ${
-                    activeIndex === index ? 'w-8 bg-indigo-400' : 'w-2 bg-slate-600'
+                    activeIndex === index ? 'w-8 bg-cyan-400' : 'w-2 bg-slate-600'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -155,7 +155,7 @@ const Testimonials = () => {
         
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="flex flex-col items-center text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-indigo-400 mb-2">250+</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">250+</h3>
             <p className="text-slate-300">Projects Delivered</p>
           </div>
           
@@ -165,12 +165,12 @@ const Testimonials = () => {
           </div>
           
           <div className="flex flex-col items-center text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-indigo-400 mb-2">120+</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">120+</h3>
             <p className="text-slate-300">Clients Worldwide</p>
           </div>
           
           <div className="flex flex-col items-center text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">7</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-teal-400 mb-2">7</h3>
             <p className="text-slate-300">Years of Excellence</p>
           </div>
         </div>
