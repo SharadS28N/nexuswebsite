@@ -8,35 +8,40 @@ const testimonials = [
     content: "Nexus transformed our annual conference with their seamless streaming solution. The technical quality was exceptional, and their team's support was outstanding from planning to execution.",
     author: "Sarah Johnson",
     position: "Events Director, TechCorp",
-    rating: 5
+    rating: 5,
+    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
   },
   {
     id: 2,
     content: "We've partnered with Nexus for our IT infrastructure needs for over 3 years. Their expertise and proactive approach have significantly improved our systems' reliability and performance.",
     author: "Michael Chen",
     position: "CTO, Innovate Solutions",
-    rating: 5
+    rating: 5,
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
   },
   {
     id: 3,
     content: "The Nexus team went above and beyond for our product launch event. Their attention to detail and technical prowess ensured everything ran flawlessly, both for in-person and virtual attendees.",
     author: "Emily Rodriguez",
     position: "Marketing Director, FutureTech",
-    rating: 5
+    rating: 5,
+    image: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg"
   },
   {
     id: 4,
     content: "Nexus provided a comprehensive IT overhaul for our company, from network infrastructure to cybersecurity. Their expertise and responsive support have been invaluable to our operations.",
     author: "David Wilson",
     position: "Operations Manager, GrowthLabs",
-    rating: 4
+    rating: 4,
+    image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
   },
   {
     id: 5,
     content: "Our virtual conference was a huge success thanks to Nexus. Their streaming platform was reliable, user-friendly, and delivered excellent video quality to our global audience.",
     author: "Jessica Taylor",
     position: "Conference Coordinator, EduSummit",
-    rating: 5
+    rating: 5,
+    image: "https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg"
   }
 ];
 
@@ -99,9 +104,16 @@ const Testimonials = () => {
                     
                     <p className="text-lg text-slate-300 mb-6">"{testimonial.content}"</p>
                     
-                    <div>
-                      <h4 className="font-semibold">{testimonial.author}</h4>
-                      <p className="text-slate-400 text-sm">{testimonial.position}</p>
+                    <div className="flex items-center">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.author}
+                        className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-indigo-500"
+                      />
+                      <div>
+                        <h4 className="font-semibold">{testimonial.author}</h4>
+                        <p className="text-slate-400 text-sm">{testimonial.position}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
