@@ -12,7 +12,7 @@ const projects = [
     image: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
   },
   {
-    title: "Virtual Conference System",
+    title: "69GN 2500 special",
     image: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg"
   },
   {
