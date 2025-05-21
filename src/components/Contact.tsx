@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { useInView } from '../hooks/useInView';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const sectionRef = useRef(null);
+  const formRef = useRef(null);
   const inView = useInView(sectionRef, { threshold: 0.1 });
   
   const [formData, setFormData] = useState({
@@ -25,21 +27,37 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormStatus({
-      submitted: true,
-      error: false,
-      message: 'Thank you for your message! We\'ll be in touch soon.'
-    });
     
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    });
+    try {
+      await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        formRef.current,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+      
+      setFormStatus({
+        submitted: true,
+        error: false,
+        message: 'Thank you for your message! We\'ll be in touch soon.'
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message: 'There was an error sending your message. Please try again later.'
+      });
+    }
   };
   
   return (
@@ -144,7 +162,7 @@ const Contact = () => {
                 <p className="text-center">{formStatus.message}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
