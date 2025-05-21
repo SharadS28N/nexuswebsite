@@ -18,12 +18,12 @@ const ServiceCard = ({ icon: Icon, title, description, className = '' }) => {
   return (
     <div
       ref={ref}
-      className={`bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-slate-700/50 transition-all duration-500 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/5 ${
+      className={`bg-indigo-950/30 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-indigo-900/50 transition-all duration-500 hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/5 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       } ${className}`}
     >
-      <div className="bg-gradient-to-br from-slate-700 to-slate-800 p-3 rounded-lg inline-block mb-4">
-        <Icon className="h-6 w-6 text-cyan-400" />
+      <div className="bg-gradient-to-br from-indigo-900 to-purple-900 p-3 rounded-lg inline-block mb-4">
+        <Icon className="h-6 w-6 text-indigo-400" />
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-slate-400">{description}</p>
@@ -40,7 +40,7 @@ const Services = () => {
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -right-40 w-80 h-80 bg-purple-600/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -left-40 w-80 h-80 bg-cyan-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -left-40 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -52,7 +52,7 @@ const Services = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Comprehensive{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
               Services
             </span>
           </h2>
