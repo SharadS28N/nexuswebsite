@@ -110,7 +110,7 @@ const Contact = () => {
                 <tbody>
                   <tr className="border-b border-indigo-900/30">
                     <td className="py-2 text-slate-400">Monday - Friday</td>
-                    <td className="py-2">9:00 AM - 6:00 PM</td>
+                    <td className="py-2">24 hours</td>
                   </tr>
                   <tr className="border-b border-indigo-900/30">
                     <td className="py-2 text-slate-400">Saturday</td>
