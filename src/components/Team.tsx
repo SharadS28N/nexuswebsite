@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useInView } from '../hooks/useInView';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Instagram } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -9,7 +9,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg',
     linkedin: '#',
     email: 'sarah@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'David Chen',
@@ -17,7 +17,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg',
     linkedin: '#',
     email: 'david@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'Emily Rodriguez',
@@ -25,7 +25,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
     linkedin: '#',
     email: 'emily@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'Michael Thompson',
@@ -33,7 +33,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg',
     linkedin: '#',
     email: 'michael@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'Jessica Wong',
@@ -41,7 +41,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg',
     linkedin: '#',
     email: 'jessica@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'Robert Turner',
@@ -49,7 +49,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg',
     linkedin: '#',
     email: 'robert@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
   {
     name: 'Anna Martinez',
@@ -57,7 +57,7 @@ const teamMembers = [
     image: 'https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg',
     linkedin: '#',
     email: 'anna@nexuseventit.com',
-    github: '#'
+    instagram: '#'
   },
 ];
 
@@ -123,11 +123,11 @@ const Team = () => {
                       <Linkedin className="h-5 w-5 text-indigo-400" />
                     </a>
                     <a 
-                      href={member.github}
+                      href={member.instagram}
                       className="p-2 bg-indigo-900/50 rounded-full hover:bg-indigo-800/50 transition-colors"
-                      aria-label={`${member.name}'s GitHub profile`}
+                      aria-label={`${member.name}'s Instagram profile`}
                     >
-                      <Github className="h-5 w-5 text-indigo-400" />
+                      <Instagram className="h-5 w-5 text-indigo-400" />
                     </a>
                   </div>
                 </div>
