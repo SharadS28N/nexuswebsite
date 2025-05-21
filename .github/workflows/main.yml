@@ -6,22 +6,24 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📦 Checkout source
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: ⚙️ Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
-      - name: 📥 Install dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: 🏗️ Build React app
+      - name: Update Browserslist DB
+        run: npx update-browserslist-db@latest
+
+      - name: Build application
         run: npm run build
 
       - name: 🚀 Deploy to cPanel via FTP (Subfolder)
