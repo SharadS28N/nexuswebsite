@@ -10,7 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              
+              <img 
+                src="https://media.discordapp.net/attachments/1374625641978265610/1374627582871470150/Adobe_Express_-_file.png?ex=682ebd33&is=682d6bb3&hm=2736611e256e98a371a53b6a2233a1b6976635907f26c14c5d500758a5229ab0&=&format=webp&quality=lossless"
+                alt="Nexus Event Logo"
+                className="h-8 w-8"
+              />
               <div className="ml-2">
                 <h3 className="text-xl font-bold">
                   <span className="text-white">Nexus</span> 
