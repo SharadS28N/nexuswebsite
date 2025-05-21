@@ -16,7 +16,7 @@ const projects = [
     image: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg"
   },
   {
-    title: "Corporate Event Management",
+    title: "69GN mobile legends pro series",
     image: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg"
   },
   {
