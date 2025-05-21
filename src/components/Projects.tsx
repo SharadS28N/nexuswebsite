@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 const projects = [
   {
-    title: "Esports Tournament Platform",
+    title: "Underdogs championship",
     image: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
   },
   {
