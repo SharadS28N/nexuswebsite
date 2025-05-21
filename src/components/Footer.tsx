@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <Globe className="h-8 w-8 text-indigo-400" />
+              
               <div className="ml-2">
                 <h3 className="text-xl font-bold">
                   <span className="text-white">Nexus</span> 
