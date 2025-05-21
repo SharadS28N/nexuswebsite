@@ -76,8 +76,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm text-slate-400 mb-1">Email</h4>
-                  <p className="font-medium">contact.nexusevent@gmail.com
-</p>
+                  <p className="font-medium">contact.nexusevent@gmail.com</p>
                 </div>
               </div>
               
@@ -87,23 +86,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm text-slate-400 mb-1">Phone</h4>
-                  <p className="font-medium">+977-9767494370
-</p>
+                  <p className="font-medium">+977-9767494370</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="bg-indigo-900/50 p-3 rounded-lg mr-4">
-                  <MapPin className="h-5 w-5 text-indigo-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm text-slate-400 mb-1">Address</h4>
-                  <p className="font-medium">123 Tech Boulevard, Suite 101</p>
-                  <p className="text-slate-400">San Francisco, CA 94103, USA</p>
-                </div>
-              </div>
-            </div>
-             <div className="flex items-start">
                 <div className="bg-indigo-900/50 p-3 rounded-lg mr-4">
                   <MapPin className="h-5 w-5 text-indigo-400" />
                 </div>
