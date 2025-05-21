@@ -32,10 +32,10 @@ const Contact = () => {
     
     try {
       await emailjs.sendForm(
-        'Yservice_c0sbozr', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_2kv98ad', // Replace with your EmailJS service ID
+        'template_2hcsyju', // Replace with your EmailJS template ID
         formRef.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'BsMhpVOJm-nA3AJHU' // Replace with your EmailJS public key
       );
       
       setFormStatus({
