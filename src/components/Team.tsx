@@ -7,7 +7,6 @@ const teamMembers = [
     name: 'suhas belbase',
     role: 'Chief Technology Officer',
     image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg',
-    bio: 'With over 15 years of experience in technology and event management, Sarah leads Nexus Event with a vision for innovation and excellence.',
     linkedin: '#',
     email: 'sarah@nexuseventit.com',
     github: '#'
@@ -16,7 +15,6 @@ const teamMembers = [
     name: 'David Chen',
     role: 'Chief Technology Officer',
     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg',
-    bio: 'David brings 12 years of expertise in IT infrastructure and streaming technology, driving our technical innovation and solutions.',
     linkedin: '#',
     email: 'david@nexuseventit.com',
     github: '#'
@@ -25,7 +23,6 @@ const teamMembers = [
     name: 'Emily Rodriguez',
     role: 'Event Director',
     image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
-    bio: 'Emily excels in creating seamless event experiences, managing our largest corporate and entertainment productions.',
     linkedin: '#',
     email: 'emily@nexuseventit.com',
     github: '#'
@@ -34,7 +31,6 @@ const teamMembers = [
     name: 'Michael Thompson',
     role: 'Head of IT Solutions',
     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg',
-    bio: 'Michael leads our IT solutions team, ensuring top-tier service delivery and client satisfaction across all projects.',
     linkedin: '#',
     email: 'michael@nexuseventit.com',
     github: '#'
@@ -43,7 +39,6 @@ const teamMembers = [
     name: 'Jessica Wong',
     role: 'Lead Software Engineer',
     image: 'https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg',
-    bio: 'Jessica spearheads our software development initiatives, creating custom solutions for streaming and event management.',
     linkedin: '#',
     email: 'jessica@nexuseventit.com',
     github: '#'
@@ -52,7 +47,6 @@ const teamMembers = [
     name: 'Robert Turner',
     role: 'Network Security Specialist',
     image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg',
-    bio: 'Robert ensures the security and reliability of our infrastructure and client systems with his cybersecurity expertise.',
     linkedin: '#',
     email: 'robert@nexuseventit.com',
     github: '#'
@@ -61,7 +55,6 @@ const teamMembers = [
     name: 'Anna Martinez',
     role: 'Client Success Manager',
     image: 'https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg',
-    bio: 'Anna works closely with our clients to ensure their needs are met and expectations are exceeded on every project.',
     linkedin: '#',
     email: 'anna@nexuseventit.com',
     github: '#'
@@ -70,7 +63,6 @@ const teamMembers = [
     name: 'James Wilson',
     role: 'Technical Director',
     image: 'https://images.pexels.com/photos/2379xxx/pexels-photo-2379xxx.jpeg',
-    bio: 'James oversees the technical aspects of our events and streaming services, ensuring flawless execution.',
     linkedin: '#',
     email: 'james@nexuseventit.com',
     github: '#'
@@ -79,7 +71,6 @@ const teamMembers = [
     name: 'Lisa Park',
     role: 'Creative Director',
     image: 'https://images.pexels.com/photos/3796218/pexels-photo-3796218.jpeg',
-    bio: 'Lisa brings creative vision to our events and digital productions, elevating the user experience.',
     linkedin: '#',
     email: 'lisa@nexuseventit.com',
     github: '#'
