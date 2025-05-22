@@ -24,10 +24,11 @@ jobs:
     - name: Build project
       run: npm run build  # make sure this outputs to dist/
 
-    - name: Setup SSH agent and add key
-      uses: webfactory/ssh-agent@v0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Start SSH Agent and add key
+      run: |
+    eval "$(ssh-agent -s)"
+    echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
+
 
 
     - name: Deploy via rsync over SSH
