@@ -1,4 +1,4 @@
-name: Deploy Vite React App to cPanel via SFTP
+name: Deploy React Vite App to cPanel via FTP
 
 on:
   push:
@@ -24,15 +24,14 @@ jobs:
       - name: Build Vite app
         run: npm run build
 
-      - name: Show output files
-        run: ls -la dist/
-
-      - name: Deploy via SFTP using appleboy/scp-action
-        uses: appleboy/scp-action@v0.1.5
+      - name: Deploy to cPanel FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.CPANEL_SERVER }}
+          server: ${{ secrets.CPANEL_SERVER }}
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
-          port: 22
-          source: "dist/*"
-          target: "/home/${{ secrets.CPANEL_USERNAME }}/public_html/nexusevent.com.np/"
+          protocol: ftp
+          port: 21
+          local-dir: dist/
+          server-dir: public_html/nexusevent.com.np/
+          dangerous-clean-slate: true
