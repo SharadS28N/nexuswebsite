@@ -1,4 +1,4 @@
-name: Deploy React App to cPanel via FTP
+name: Deploy Vite App to cPanel via SFTP
 
 on:
   push:
@@ -20,19 +20,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Update Browserslist DB
-        run: npx update-browserslist-db@latest
-
-      - name: Build application
+      - name: Build Vite app
         run: npm run build
 
-      - name: 🚀 Deploy to cPanel via FTP (Addon Domain)
+      - name: Show output files
+        run: ls -la dist/
+
+      - name: 🚀 Deploy via SFTP to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.CPANEL_SERVER }}
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
+          protocol: sftp
+          port: 22
           local-dir: dist/
           server-dir: public_html/nexusevent.com.np/
-          dangerous-clean-slate: false
-          passive: true
+          dangerous-clean-slate: true
