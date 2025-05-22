@@ -24,19 +24,18 @@ jobs:
       - name: Build Vite app
         run: npm run build
 
-      - name: Deploy to FTP via lftp
+      - name: Deploy with lftp
         env:
           FTP_SERVER: ${{ secrets.CPANEL_SERVER }}
           FTP_USERNAME: ${{ secrets.CPANEL_USERNAME }}
           FTP_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
         run: |
-          # Install lftp
           sudo apt-get update
           sudo apt-get install -y lftp
 
-          # Use lftp to mirror the dist/ directory to your FTP server
           lftp -c "
-            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
             set ftp:passive-mode on;
+            set ssl:verify-certificate no;
+            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
             mirror -R --delete --verbose dist/ public_html/nexusevent.com.np/
           "
