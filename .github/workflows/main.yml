@@ -26,12 +26,12 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: 🚀 Deploy to cPanel via FTP
+      - name: 🚀 Deploy to cPanel via FTP (Addon Domain)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.CPANEL_SERVER }}
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
           local-dir: build/
-          server-dir: public_html/nexusevent/
+          server-dir: public_html/nexusevent.com.np/
           dangerous-clean-slate: true
