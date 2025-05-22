@@ -1,4 +1,4 @@
-name: Deploy React Vite App via FTP using lftp
+name: Deploy React App to cPanel via FTP
 
 on:
   push:
@@ -6,25 +6,25 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: 📦 Install Dependencies
         run: npm install
 
-      - name: Build Vite app
+      - name: 🛠️ Build App
         run: npm run build
 
-      - name: Deploy with lftp
+      - name: 🚀 Deploy to cPanel via FTP using lftp
         env:
           FTP_SERVER: ${{ secrets.CPANEL_SERVER }}
           FTP_USERNAME: ${{ secrets.CPANEL_USERNAME }}
@@ -37,5 +37,5 @@ jobs:
             set ftp:passive-mode on;
             set ssl:verify-certificate no;
             open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            mirror -R --delete --verbose dist/ public_html/nexusevent.com.np/
+            mirror -R --delete --verbose dist/ nexusevent.com.np/
           "
