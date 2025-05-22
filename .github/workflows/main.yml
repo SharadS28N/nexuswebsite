@@ -1,41 +1,35 @@
-name: Deploy React App to cPanel via FTP
+name: Build & Deploy to cPanel via SSH
 
 on:
   push:
     branches:
-      - main
+      - main   # or your default branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # or your project version
 
-      - name: 📦 Install Dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: 🛠️ Build App
-        run: npm run build
+    - name: Build project
+      run: npm run build  # make sure this outputs to dist/
 
-      - name: 🚀 Deploy to cPanel via FTP using lftp
-        env:
-          FTP_SERVER: ${{ secrets.CPANEL_SERVER }}
-          FTP_USERNAME: ${{ secrets.CPANEL_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lftp
+    - name: Setup SSH agent and add key
+      uses: webfactory/ssh-agent@v0.8.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-          lftp -c "
-            set ftp:passive-mode on;
-            set ssl:verify-certificate no;
-            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            mirror -R --delete --verbose dist/ nexusevent.com.np/
-          "
+
+    - name: Deploy via rsync over SSH
+      run: |
+        rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" dist/ versulin@your-cpanel-server:/home2/versulin/nexusevent.com.np/
