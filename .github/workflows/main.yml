@@ -1,36 +1,34 @@
-name: Build & Deploy to cPanel via SSH
+name: Deploy to cPanel via FTP
 
 on:
   push:
     branches:
-      - main   # or your default branch
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'  # or your project version
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build  # make sure this outputs to dist/
+      - name: Build the project
+        run: npm run build
 
-    - name: Start SSH Agent and add key
-      run: |
-    eval "$(ssh-agent -s)"
-    echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
-
-
-
-    - name: Deploy via rsync over SSH
-      run: |
-        rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" dist/ versulin@your-cpanel-server:/home2/versulin/nexusevent.com.np/
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ftp.versulin.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
+          server-dir: /home2/versulin/nexusevent.com.np
