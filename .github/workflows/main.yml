@@ -23,5 +23,6 @@ jobs:
           server: ftp.versulink.com
           username: nexusftp@versulink.com
           password: ${{ secrets.FTP_PASSWORD }}
+          passive: false
           server-dir: /nexusevent.com.np/
           local-dir: dist/
