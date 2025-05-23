@@ -1,16 +1,16 @@
-name: Deploy to cPanel via FTP
+name: Deploy to cPanel via SFTP
 
 on:
   push:
     branches:
-      - main
+      - main  # or your branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -21,19 +21,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build the app
         run: npm run build
 
       - name: Copy .htaccess to dist
         run: cp .htaccess dist/.htaccess
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ftp.versulink.com
+          host: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: dist/
-          server-dir: /home2/versulin/nexusevent.com.np/
+          key: ${{ secrets.FTP_PRIVATE_KEY }}
+          port: 22
+          source: "dist/*"
+          target: "/home2/versulin/nexusevent.com.np/"
